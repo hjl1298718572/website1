@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常用网站</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#722ED1',
+                        neutral: '#F5F7FA',
+                        dark: '#1D2129',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+            }
+            .gradient-bg {
+                background: linear-gradient(135deg, #165DFF 0%, #722ED1 100%);
+            }
+        }
+    </style>
+</head>
+<body class="bg-neutral font-inter text-dark min-h-screen">
+   <header class="gradient-bg text-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center"> <!-- 调整为响应式弹性布局 -->
+        <!-- 导航标题与搜索框包裹在同一容器，便于居中 -->
+        <div class="w-full md:w-auto flex flex-col items-center md:flex-row justify-between md:justify-center space-y-2 md:space-y-0 md:space-x-4">
+            <!-- 原有导航标题 -->
+            <div>
+                <h1 class="text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight">
+                    <i class="fa-solid fa-book-open mr-3"></i>常用资源导航
+                </h1>
+                <p class="text-white/80 mt-1 text-[clamp(0.9rem,1.5vw,1rem)]">学习、工作和娱乐的一站式导航</p>
+            </div>
+
+            <!-- 新增居中搜索框（白色背景） -->
+            <div class="mt-4 md:mt-0 flex items-center bg-white rounded-full p-1 shadow-md"> <!-- 白色背景：bg-white -->
+                <form action="https://www.bing.com/search" method="get" target="_blank" class="flex items-center space-x-2">
+                    <input 
+                        type="text" 
+                        name="q" 
+                        placeholder="搜索..." 
+                        class="bg-transparent border-0 focus:outline-none text-dark text-sm pl-3 pr-1 w-48 md:w-64" <!-- 深色文字+固定宽度 -->
+                    >
+                    <button type="submit" class="text-primary hover:text-primary-dark">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+    <main class="container mx-auto px-4 py-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- 学习资源卡片 -->
+        <section class="card-hover bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="gradient-bg p-3 text-white">
+                <h2 class="text-lg font-bold flex items-center">
+                    <i class="fa-solid fa-graduation-cap mr-2"></i>学习资源
+                </h2>
+            </div>
+            <div class="p-3 space-y-1">
+                <a href="https://www.gxmzu.edu.cn/" target="_blank" class="flex items-center p-2 rounded-lg hover:bg-primary/5 transition-colors text-sm">
+                    <i class="fa-solid fa-university text-primary w-5"></i>
+                    <span class="ml-2">广西民族大学</span>
+                </a>
+                <a href="http://10.240.147.1/indexcs/simple.jsp?loginErr=0" target="_blank" class="flex items-center p-2 rounded-lg hover:bg-primary/5 transition-colors text-sm">
+                    <i class="fa-solid fa-code text-primary w-5"></i>
+                    <span class="ml-2">CG平台</span>
+                </a>
+                <a href="https://gxmz.eduplus.net/home/index" target="_blank" class="flex items-center p-2 rounded-lg hover:bg-primary/5 transition-colors text-sm">
+                    <i class="fa-solid fa-laptop text-primary w-5"></i>
+                    <span class="ml-2">U+平台</span>
+                </a>
+                <a href="https://www.iodraw.com/" target="_blank" class="flex items-center p-2 rounded-lg hover:bg-primary/5 transition-colors text-sm">
+                    <i class="fa-solid fa-pencil-ruler text-primary w-5"></i>
+                    <span class="ml-2">在线画图工具</span>
+                </a>
+                <a href="https://www.pigai.org/" target="_blank" class="flex items-center p-2 rounded-lg hover:bg-primary/5 transition-colors text-sm">
+                    <i class="fa-solid fa-file-text text-primary w-5"></i>
+                    <span class="ml-2">批改网</span>
+                </a>
+                <a href="https://www.csdn.net/" target="_blank" class="flex items-center p-2 rounded-lg hover:bg-primary/5 transition-colors text-sm">
+                    <i class="fa-solid fa-code text-primary w-5"></i>
+                    <span class="ml-2">CSDN</span>
+                </a>
+                <a href="https://gitee.com/" target="_blank" class="flex items-center p-2 rounded-lg hover:bg-primary/5 transition-colors text-sm">
+                    <i class="fa-brands fa-git-alt text-primary w-5"></i>
+                    <span class="ml-2">Gitee</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- AI工具卡片 -->
+<section class="card-hover bg-white rounded-xl shadow-md overflow-hidden">
+    <div class="bg-gradient-to-r from-purple-500 to-pink-500 p-3 text-white">
+        <h2 class="text-lg font-bold flex items-center">
+            <i class="fa-solid fa-robot mr-2"></i>AI工具
+        </h2>
+    </div>
+    <div class="p-3 space-y-1">
+        <a href="https://chat18.aichatos.xyz/#/chat/1716253471929" target="_blank" class="flex items-center p-2 rounded-lg hover:bg-purple-50 transition-colors text-sm">
+            <i class="fa-solid fa-comments text-purple-500 w-5"></i>
+            <span class="ml-2">ChatGPT</span>
+        </a>
+        <a href="https://www.doubao.com/" target="_blank" class="flex items-center p-2 rounded-lg hover:bg-purple-50 transition-colors text-sm">
+            <i class="fa-solid fa-lightbulb text-purple-500 w-5"></i>
+            <span class="ml-2">豆包</span>
+        </a>
+        <a href="https://chat.deepseek.com/" target="_blank" class="flex items-center p-2 rounded-lg hover:bg-purple-50 transition-colors text-sm">
+            <i class="fa-solid fa-brain text-purple-500 w-5"></i>
+            <span class="ml-2">DeepSeek</span>
+        </a>
+        <a href="https://metaso.cn/" target="_blank" class="flex items-center p-2 rounded-lg hover:bg-purple-50 transition-colors text-sm">
+            <i class="fa-solid fa-search-location text-purple-500 w-5"></i>
+            <span class="ml-2">秘塔AI搜索</span>
+        </a>
+        <a href="https://modao.cc/" target="_blank" class="flex items-center p-2 rounded-lg hover:bg-purple-50 transition-colors text-sm">
+            <i class="fa-solid fa-pencil-ruler text-purple-500 w-5"></i>
+            <span class="ml-2">墨刀</span>
+        </a>
+        <a href="https://kimi.moonshot.cn" target="_blank" class="flex items-center p-2 rounded-lg hover:bg-purple-50 transition-colors text-sm">
+            <i class="fa-solid fa-robot text-purple-500 w-5"></i>
+            <span class="ml-2">Kimi智能助手</span>
+        </a>
+    </div>
+</section>
+
+        <!-- 娱乐资源卡片 -->
+        <section class="card-hover bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="bg-gradient-to-r from-blue-500 to-teal-400 p-3 text-white">
+                <h2 class="text-lg font-bold flex items-center">
+                    <i class="fa-solid fa-film mr-2"></i>视频娱乐
+                </h2>
+            </div>
+            <div class="p-3 space-y-1">
+                <a href="https://www.bilibili.com/" target="_blank" class="flex items-center p-2 rounded-lg hover:bg-blue-50 transition-colors text-sm">
+                    <i class="fa-brands fa-bilibili text-blue-500 w-5"></i>
+                    <span class="ml-2">哔哩哔哩</span>
+                </a>
+                <a href="http://www.jrkan2022.com/" target="_blank" class="flex items-center p-2 rounded-lg hover:bg-blue-50 transition-colors text-sm">
+                    <i class="fa-solid fa-tv text-blue-500 w-5"></i>
+                    <span class="ml-2">球赛直播</span>
+                </a>
+                <a href="https://www.douyin.com/" target="_blank" class="flex items-center p-2 rounded-lg hover:bg-blue-50 transition-colors text-sm">
+                    <i class="fa-brands fa-tiktok text-blue-500 w-5"></i>
+                    <span class="ml-2">抖音</span>
+                </a>
+                <a href="https://v.qq.com/" target="_blank" class="flex items-center p-2 rounded-lg hover:bg-blue-50 transition-colors text-sm">
+                    <i class="fa-brands fa-tencent-weibo text-blue-500 w-5"></i>
+                    <span class="ml-2">腾讯视频</span>
+                </a>
+                <a href="https://www.kugou.com/" target="_blank" class="flex items-center p-2 rounded-lg hover:bg-blue-50 transition-colors text-sm">
+                    <i class="fa-solid fa-music text-blue-500 w-5"></i>
+                    <span class="ml-2">酷狗音乐</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white/70 py-5 mt-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-3 md:mb-0">
+                    <p class="text-xs">© 2025 常用资源导航. 保留所有权利.</p>
+                </div>
+                <div class="flex space-x-3 text-sm">
+                    <a href="#" class="text-white/70 hover:text-white transition-colors">
+                        <i class="fa-solid fa-question-circle"></i> 帮助
+                    </a>
+                    <a href="#" class="text-white/70 hover:text-white transition-colors">
+                        <i class="fa-solid fa-envelope"></i> 联系我们
+                    </a>
+                    <a href="#" class="text-white/70 hover:text-white transition-colors">
+                        <i class="fa-solid fa-shield"></i> 隐私政策
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 平滑滚动效果
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 添加卡片进入动画
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card-hover');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-4');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach(card => {
+                card.classList.add('opacity-0', 'translate-y-4', 'transition-all', 'duration-500');
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
